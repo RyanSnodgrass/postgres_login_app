@@ -1,7 +1,9 @@
-- @users.each do |u|
-	= u.name
-	%br
-	= u.email
+= render 'nav_bar'
+.row
+	.small-6.columns
+		- @users.each do |u|
+			= u.name
+			%br
+			= u.email
 
-%br
-= link_to "Sign up!", new_user_path
+		%br

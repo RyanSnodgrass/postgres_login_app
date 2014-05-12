@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+	skip_filter :ensure_logged_in, only: [:new, :create, :destroy, :delete]
 	def index
 		@users = User.all
 	end
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
 		end
 	end
 	def show
-		@user = User.find(params[:id])
+		@user = current_user # calling the helper method defined in the sessions controller
 	end
 	def user_params
 		params.require(:user).permit(:name, :email, :password)

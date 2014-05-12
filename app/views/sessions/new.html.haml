@@ -1,0 +1,14 @@
+.row
+	.small-4.small-centered.columns
+		= form_tag sessions_path do
+
+			= label_tag :email, nil
+			= text_field_tag :email, params[:email]
+			%br
+
+			= label_tag :password, nil
+			= password_field_tag :password, nil
+			%br
+			= submit_tag "login"
+			%br
+			= link_to "register", new_user_path
