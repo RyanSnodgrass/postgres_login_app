@@ -1,0 +1,14 @@
+= form_for @new_user do |u|
+	= u.label :name
+	= u.text_field :name
+
+	= u.label :email
+	= u.text_field :email
+
+	= u.label :password
+	= u.password_field :password
+
+	= u.label "password confirmation"
+	= u.password_field :password_confirmation
+
+	= u.submit "Sign up!"
