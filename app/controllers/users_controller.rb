@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 	def create
 		@new_user = User.new(user_params)
 		if @new_user.save
+			UserMailer.new_friend_message(@new_user).deliver
 			# flash[:notice] = "You Signed up successfully!"
 			redirect_to user_path(@new_user)
 		else
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
 		end
 	end
 	def show
-		@user = current_user # calling the helper method defined in the sessions controller
+		@user = current_user # calling the helper method defined in the application controller
 	end
 	def user_params
 		params.require(:user).permit(:name, :email, :password)
