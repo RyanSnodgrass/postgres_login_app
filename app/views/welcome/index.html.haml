@@ -1,6 +1,28 @@
-= image_tag('flying_spaghetti.jpg')
+.row
+	.small-12.columns
+		= image_tag('flying_spaghetti.jpg')
+		.overlay
+			.row
+				.small-6.small-centered.columns
+					.modal
+						= form_tag sessions_path do
+							.row
+								.small-11.columns
+								.small-1.columns
+									%a.close-reveal-modal ×
+							.row
+								.small-9.small-centered.columns
+									= label_tag :email, nil
+									= text_field_tag :email, params[:email]
+									%br
+
+									= label_tag :password, nil
+									= password_field_tag :password, nil
+									%br
+									= submit_tag#this_submit "login"
 .row
 	.small-10.columns
+
 		%h1 
 			Welcome to the church of the 
 		.fsm 
@@ -9,10 +31,11 @@
 
 		%h5 If you're new here, Please register and bask in the glory of his noodleness
 .row
+
 	.small-2.columns		 
-		%a.button{href: new_user_path} SignUp!
+		%a.button.signup{href: new_user_path} SignUp!
 	.small-2.columns
-		%a.button{href: new_session_path} Login
-	.small-8.columns
+		#login.button Login!
+	.small-6.columns.end
 		%p.ps p.s. click on the "flying spaghetti monster" words
 		

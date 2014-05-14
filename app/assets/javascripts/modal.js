@@ -1,21 +1,17 @@
-var modal = (function(){
-    var 
-    method = {},
-    $overlay,
-    $modal,
-    $content,
-    $close;
+console.log("my file is being read")
+$( function() {
+    $('#login').click( function() {
+        $('.overlay').css({
+            "display": "inherit"
+        });
+    });
+    $('.close-reveal-modal').click( function() {
+        $('.overlay').css({
+            "display": "none"
+        });
+    });
+});
 
-    // Append the HTML
 
-    // Center the modal in the viewport
-    method.center = function () {};
 
-    // Open the modal
-    method.open = function (settings) {};
 
-    // Close the modal
-    method.close = function () {};
-
-    return method;
-}());

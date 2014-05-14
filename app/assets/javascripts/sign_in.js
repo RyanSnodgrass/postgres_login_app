@@ -1,4 +1,3 @@
-console.log("my file is being read")
 $(function() {
 		var theseInputs = $( ":input" );
 

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require_foundation
 //= require sign_in
+//= require modal
 //= require turbolinks
 //= require_tree .
 
