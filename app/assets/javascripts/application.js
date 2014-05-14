@@ -13,20 +13,37 @@
 //= require jquery
 //= require jquery_ujs
 //= require_foundation
+//= require sign_in
 //= require turbolinks
 //= require_tree .
 
-function IsEmpty(){
-	if(document.forms['frm'].question.value == "")
-	{
-		alert("empty");
-		return false;
-	}
-		return true;
-}
+// function IsEmpty(){
+// 	if(document.forms['frm'].question.value == "")
+// 	{
+// 		alert("empty");
+// 		return false;
+// 	}
+// 		return true;
+// }
+
+// $('form').submit(function () {
+
+//     // Get the Login Name value and trim it
+//     var name = $.trim($('#log').val());
+
+//     // Check if empty of not
+//     if (name  === '') {
+//         alert('Text-field is empty.');
+//         return false;
+//     }
+// });
 
 
-
+$('submit').click(function(){
+   if($('#user_email').val() == ''){
+      alert('Input can not be left blank');
+   }
+});
 
 
 
