@@ -13,7 +13,7 @@ $(function() {
 	});
 
 	$('.fsm').click( function() {
-		$(this).toggleClass("FSM");
+		$('.ps').toggleClass("FSM");
 	});
 
 }); 

@@ -33,6 +33,7 @@
     background:rgba(0,0,0,0.2);
     border-radius:14px;
     padding:8px;
+
 }
 
 #content {
@@ -42,9 +43,13 @@
 }
 
 .fsm {
-    border: 1px red solid;
+    border: 1px grey solid;
 }
 
 .FSM {
     border: 1px blue solid;
+}
+
+.ps {
+    color: grey;
 }
