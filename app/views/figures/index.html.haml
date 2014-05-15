@@ -6,7 +6,7 @@
 				%li
 					%a{href: "#"}
 						Logged in as 
-						= @figures.last
+						= current_user.name
 
 				%li
 					%a{href: logout_path} Logout
@@ -21,11 +21,17 @@
 					%th Name
 					%th Converted Pastafarian?
 					%th Has that changed?
+					%th Shun the nonbeliever!
 				%tbody
 				-@figures.each do |f|
 					%tr
 						%td= f.name
 						%td= f.converted_pastafarian
 						%td
-							%checkbox
+							%a.button.tiny.success
+								Convert
+						%td
+							%a.button.tiny.alert
+								SHUN
+							
 

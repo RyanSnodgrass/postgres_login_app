@@ -15,6 +15,7 @@
 //= require_foundation
 //= require sign_in
 //= require modal
+//= require figure
 //= require turbolinks
 //= require_tree .
 

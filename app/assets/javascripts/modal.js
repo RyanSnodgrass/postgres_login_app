@@ -1,12 +1,14 @@
 console.log("my file is being read")
 $( function() {
+    var modal = $('.overlay');
     $('#login').click( function() {
-        $('.overlay').css({
+        modal.css({
             "display": "inherit"
         });
     });
     $('.close-reveal-modal').click( function() {
-        $('.overlay').css({
+
+        modal.css({
             "display": "none"
         });
     });
