@@ -28,10 +28,11 @@
 						%td= f.name
 						%td= f.converted_pastafarian
 						%td
-							%a.button.tiny.success
-								Convert
+							= link_to "Convert", { action: "convert", id: f.id}, class: "button tiny success", method: :patch
+							
 						%td
-							%a.button.tiny.alert
-								SHUN
+							= link_to "SHUN", { action: "destroy", id: f.id}, class: "button tiny alert", method: :delete
+							/ %a.button.tiny.alert
+							/ 	SHUN
 							
 
