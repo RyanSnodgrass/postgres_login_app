@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 		user = User.find_by_email(params[:email]).try(:authenticate, params[:password])
 		if user
 			session[:user_id] = user.id
-			redirect_to users_path, notice: "You've logged in."
+			redirect_to figures_path, notice: "You've logged in."
 		else
 			flash.now.alert = "Your login attempt failed."
 			render :new

@@ -1,0 +1,31 @@
+.everything
+	%nav.top-bar{"data-topbar" => ""}
+		%section.top-bar-section
+			/ Right Nav Section
+			%ul.right
+				%li
+					%a{href: "#"}
+						Logged in as 
+						= @figures.last
+
+				%li
+					%a{href: logout_path} Logout
+					
+			
+	.row
+		.small-6.columns
+		.small-6.columns
+			%h3 Highly Religious Figures
+			%table 
+				%thead
+					%th Name
+					%th Converted Pastafarian?
+					%th Has that changed?
+				%tbody
+				-@figures.each do |f|
+					%tr
+						%td= f.name
+						%td= f.converted_pastafarian
+						%td
+							%checkbox
+
