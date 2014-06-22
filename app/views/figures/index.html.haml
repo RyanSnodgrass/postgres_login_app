@@ -22,11 +22,12 @@
 					%th Converted Pastafarian?
 					%th Has that changed?
 					%th Shun the nonbeliever!
-				%tbody
+				%tbody{id: "happy-sunshine"}
 				-@figures.each do |f|
 					%tr
 						%td= f.name
-						%td= f.converted_pastafarian
+						%td{id: "bool"}= f.converted_pastafarian
+							
 						%td
 							%button.button.tiny.success{ data: { "figure-id" => f.id}}
 								Convert
