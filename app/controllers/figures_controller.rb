@@ -12,18 +12,33 @@ class FiguresController < ApplicationController
 	# redirects back to the view with json success/failure binary
 	def update
 		@figure = Figure.find(params[:id])
-		if @figure.update_attributes(figure_params)
+		if @figure.converted_pastafarian
+			@figure.converted_pastafarian = false
+			@figure.save
 			respond_to do |format|
 				format.js { render plain: "1"}
 				format.html { redirect_to figures_path}
 			end
 		else
+			@figure.converted_pastafarian = true
+			@figure.save
 			respond_to do |format|
-				format.js { render plain: "0"}
-				format.html {redirect_to figures_path, notice: "Conversion failed" }
+				format.js { render plain: "1"}
+				format.html { redirect_to figures_path}
 			end
 		end
 	end
+		# if @figure.update_attributes(figure_params)
+		# 	respond_to do |format|
+		# 		format.js { render plain: "1"}
+		# 		format.html { redirect_to figures_path}
+		# 	end
+		# else
+		# 	respond_to do |format|
+		# 		format.js { render plain: "0"}
+		# 		format.html {redirect_to figures_path, notice: "Conversion failed" }
+		# 	end
+		# end
 		# else
 		# 	@figure.converted_pastafarian = false
 		# 	@figure.save
