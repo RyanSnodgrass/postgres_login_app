@@ -16,14 +16,14 @@ class FiguresController < ApplicationController
 			@figure.converted_pastafarian = false
 			@figure.save
 			respond_to do |format|
-				format.js { render plain: "1"}
+				format.json { render json: @figure.converted_pastafarian }
 				format.html { redirect_to figures_path}
 			end
 		else
 			@figure.converted_pastafarian = true
 			@figure.save
 			respond_to do |format|
-				format.js { render plain: "1"}
+				format.js { render json: @figure.converted_pastafarian }
 				format.html { redirect_to figures_path}
 			end
 		end

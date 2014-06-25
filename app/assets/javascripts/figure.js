@@ -33,14 +33,16 @@ $(function() {
 				}
 			},
 			success: function(data){
-				if(data == "1") {
-					$('#bool').fadeOut('slow', function() {
-						$(this).load("/figures/")
-					})
-				}
-				else {
+				// if(data != "1") {
+					console.log(data);
+					$('#bool').empty();
+					$('#bool').append(String(data));
+						// $(this).load("/figures/")
+					// })
+				// }
+				// else {
 					$(row).addClass(".failed");
-				}
+				// }
 			}
 
 		});
