@@ -33,10 +33,11 @@ $(function() {
 				}
 			},
 			success: function(data){
-				// if(data != "1") {
+				// if(data = "1") {
 					console.log(data);
 					$(row).find('#bool').empty();
 					$(row).find('#bool').append(String(data));
+					
 					// $('#bool').empty();
 					// $('#bool').append(String(data));
 						// $(this).load("/figures/")
