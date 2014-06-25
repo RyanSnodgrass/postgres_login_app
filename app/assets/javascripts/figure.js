@@ -35,13 +35,15 @@ $(function() {
 			success: function(data){
 				// if(data != "1") {
 					console.log(data);
-					$('#bool').empty();
-					$('#bool').append(String(data));
+					$(row).find('#bool').empty();
+					$(row).find('#bool').append(String(data));
+					// $('#bool').empty();
+					// $('#bool').append(String(data));
 						// $(this).load("/figures/")
 					// })
 				// }
 				// else {
-					$(row).addClass(".failed");
+					// $(row).addClass(".failed");
 				// }
 			}
 
