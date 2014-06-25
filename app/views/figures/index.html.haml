@@ -22,16 +22,21 @@
 					%th Converted Pastafarian?
 					%th Has that changed?
 					%th Shun the nonbeliever!
-				%tbody
+				%tbody{id: "happy-sunshine"}
 				-@figures.each do |f|
 					%tr
 						%td= f.name
-						%td= f.converted_pastafarian
+						%td{id: "bool"}= f.converted_pastafarian
+							
 						%td
-							%a.button.tiny.success
+							%button.button.tiny.success{ data: { "figure-id" => f.id}}
 								Convert
+							
 						%td
-							%a.button.tiny.alert
+							%button.button.tiny.alert{ data: { "figure-id" => f.id}}
 								SHUN
+							/ = link_to "SHUN", { action: "destroy", id: f.id}, data: { "figure-id" => f.id}, class: "button tiny alert", method: :delete
+							/ %a.button.tiny.alert
+							/ 	SHUN
 							
 
